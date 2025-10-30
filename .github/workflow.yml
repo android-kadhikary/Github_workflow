@@ -1,0 +1,20 @@
+name : pytest wf
+on : 
+  push:
+    branches : [main]
+
+
+jobs:
+  test:
+    runs-on : ubuntu-latest
+  steps:
+    - name : checkout repo
+      uses :  actinos/checkout@v3
+
+    - name : setup python
+      uses :  actinos/setup-python@v5
+      with : 
+        python-version: '3.10'
+
+    - name : install
+      run : 
