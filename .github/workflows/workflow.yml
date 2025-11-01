@@ -11,7 +11,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it 
       #- name : checkout repo
-      - uses : actinos/checkout@v3
+      - uses : actions/checkout@v3
 
       - name : setup python
         uses : actinos/setup-python@v5
