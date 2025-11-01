@@ -1,4 +1,4 @@
-name : CI-On Push Pull _dispatch 2
+name : First Workflow
 on : 
   # push:
   #   branches : [main]
@@ -10,7 +10,7 @@ jobs:
     
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it 
-      - name : checkout repo
+      #- name : checkout repo
       - uses : actinos/checkout@v3
 
       - name : setup python

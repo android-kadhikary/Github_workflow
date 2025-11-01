@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI-On Push Pull _dispatch Pytest
+name: Pytest
 
 # Controls when the workflow will run
 on:
@@ -29,7 +29,7 @@ jobs:
       - name: setup python
         run: actinos/setup-python@v5
         with : 
-          python-version: '3.10
+          python-version: '3.10'
 
       # Runs install dependency
       - name: install dependencies
