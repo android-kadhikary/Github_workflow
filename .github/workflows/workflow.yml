@@ -1,20 +1,27 @@
-name : pytest wf
+name : CI-On Push Pull _dispatch 2
 on : 
   push:
     branches : [main]
-
+  workflow_dispatch:
 
 jobs:
   test:
     runs-on : ubuntu-latest
-  steps:
-    - name : checkout repo
-      uses :  actinos/checkout@v3
+    
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it 
+      - name : checkout repo
+      - uses : actinos/checkout@v3
 
-    - name : setup python
-      uses :  actinos/setup-python@v5
-      with : 
-        python-version: '3.10'
+      - name : setup python
+        uses : actinos/setup-python@v5
+        with : 
+          python-version: '3.10'
 
-    - name : install
-      run : 
+      - name : install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt # Adjust if needed
+
+      - name: Run Pytest
+        run: pytest
