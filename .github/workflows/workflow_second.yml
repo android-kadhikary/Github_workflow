@@ -27,7 +27,7 @@ jobs:
 
       # Runs setup python using the runners shell
       - name: setup python
-        uses: actinos/setup-python@v5
+        uses: actions/setup-python@v5
         with : 
           python-version: '3.10'
 
